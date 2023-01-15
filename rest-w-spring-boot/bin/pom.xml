@@ -33,18 +33,6 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-        <!-- Inutil, content negotiation -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.dataformat</groupId>
-            <artifactId>jackson-dataformat-cbor</artifactId>
-        </dependency>
-        <!-- Inutil, content negotiation -->
-
-        <dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-		</dependency>
-
         <dependency>
             <groupId>com.github.dozermapper</groupId>
             <artifactId>dozer-core</artifactId>
