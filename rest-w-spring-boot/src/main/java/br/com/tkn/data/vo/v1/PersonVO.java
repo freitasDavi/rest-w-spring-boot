@@ -20,15 +20,15 @@ public class PersonVO extends RepresentationModel<PersonVO> implements Serializa
     @JsonProperty("id")
     private Long key;
 
-    @JsonProperty("first_name")
+    //@JsonProperty("first_name")
     private String firstName;
     
-    @JsonProperty("last_name")
+    //@JsonProperty("last_name")
     private String lastName;
     
     private String address;
     
-    @JsonIgnore
+    //@JsonIgnore
     private String gender;
 
     public PersonVO() {

@@ -5,14 +5,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
     private static final MediaType MEDIA_TYPE_APPLICATION_YML = MediaType.valueOf("application/x-yaml");
+
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
 
@@ -34,6 +37,17 @@ public class WebConfig implements WebMvcConfigurer {
                         .mediaType("yaml", MEDIA_TYPE_APPLICATION_YML);
 
 
+    }
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+//        WebMvcConfigurer.super.addCorsMappings(registry);
+
+        registry
+                .addMapping("/api/**")
+                .allowedMethods("*")
+                .allowedOrigins("https://erudio.com.br", "http://localhost:8080", "http://localhost:3000")
+                .allowCredentials(true);
     }
 
     @Override

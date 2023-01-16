@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
+//@CrossOrigin
 @RestController
-@RequestMapping("/person/api/v1")
+@RequestMapping("/api/person/v1")
 public class PersonController {
 
     //private PersonService service = new PersonService();
@@ -28,12 +29,14 @@ public class PersonController {
         return service.findAll();
     }
 
+    //@CrossOrigin(origins = "http://localhost:8080")
     @GetMapping(value = "/{id}", produces = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
             MediaType.APPLICATION_YML})
     public PersonVO findById(@PathVariable(value = "id") Long id) throws Exception {
         return service.findById(id);
     }
 
+    //@CrossOrigin(origins = { "http://localhost:8080", "https://erudio.com.br" })
     @PostMapping(consumes = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
             MediaType.APPLICATION_YML}, produces = { MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML,
             MediaType.APPLICATION_YML})
