@@ -12,7 +12,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/person/api/v1")
 public class PersonController {
 
     //private PersonService service = new PersonService();
